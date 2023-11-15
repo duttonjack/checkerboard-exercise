@@ -1,10 +1,4 @@
-// Random Colors Checkerboard
-
-// Helper Functions
-function generateRgbValue(){
-    return Math.floor(Math.random() * (255 - 0)) + 0
-}
-
+// Gradient Checkerboard
 function generateContainer(){
     var boardContainer = document.createElement('div');
     boardContainer.className = "board";
@@ -16,21 +10,47 @@ function generateContainer(){
     return boardContainer
 }
 
-function generateSquare(){
+function generateSquare(color){
+    var otherColor;
+    if (color === 'yellow'){
+      otherColor = 'blue';
+    } else {
+      otherColor = 'yellow';
+    }
     var squareTile = document.createElement('div');
     squareTile.className = "square";
     squareTile.style.width = '12.5%';
     squareTile.style.height = '12.5%';
-    squareTile.style.backgroundColor = 'rgb(' + generateRgbValue() + ',' + generateRgbValue() + ',' + generateRgbValue() + ')';
+    squareTile.style.backgroundImage = "linear-gradient(to left bottom, "+ color +", "+ otherColor +")";
     return squareTile
 }
 
-function generateBoard(){
-    for (let i =0; i < 64; i++){
-        boardContainer.appendChild(generateSquare())
+function generateRow(startingColor){
+    var otherColor;
+    if (startingColor === 'yellow'){
+      otherColor = 'blue';
+    } else {
+      otherColor = 'yellow';
+    }
+    for (let i = 0; i < 8; i++){
+        if (i % 2 === 0){
+            boardContainer.appendChild(generateSquare(startingColor));
+        } else {
+            boardContainer.appendChild(generateSquare(otherColor));
+        }
     }
 }
 
-// Main Block
+function generateBoard(){
+    for (let i =0; i < 8; i++){
+        if (i % 2 ==0){
+            generateRow('blue');
+        } else {
+            generateRow('yellow');
+        }
+    }
+}
+
 var boardContainer = generateContainer();
 generateBoard();
+console.log(boardContainer);
