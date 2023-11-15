@@ -1,4 +1,10 @@
-// Basic Red & Black Checkerboard
+// Random Colors Checkerboard
+
+// Helper Functions
+function generateRgbValue(){
+    return Math.floor(Math.random() * (255 - 0)) + 0
+}
+
 function generateContainer(){
     var boardContainer = document.createElement('div');
     boardContainer.className = "board";
@@ -10,118 +16,21 @@ function generateContainer(){
     return boardContainer
 }
 
-
-
-function generateSquare(color){
+function generateSquare(){
     var squareTile = document.createElement('div');
     squareTile.className = "square";
     squareTile.style.width = '12.5%';
     squareTile.style.height = '12.5%';
-    squareTile.style.backgroundColor = color;
+    squareTile.style.backgroundColor = 'rgb(' + generateRgbValue() + ',' + generateRgbValue() + ',' + generateRgbValue() + ')';
     return squareTile
 }
 
-function generateRow(startingColor){
-    var otherColor;
-    if (startingColor === 'red'){
-      otherColor = 'black';
-    } else {
-      otherColor = 'red';
-    }
-
-    for (let i = 0; i < 8; i++){
-        if (i % 2 === 0){
-            boardContainer.appendChild(generateSquare(startingColor));
-        } else {
-            boardContainer.appendChild(generateSquare(otherColor));
-        }
-    }
-}
-
 function generateBoard(){
-    for (let i =0; i < 8; i++){
-        if (i % 2 ==0){
-            generateRow('red');
-        } else {
-            generateRow('black');
-        }
+    for (let i =0; i < 64; i++){
+        boardContainer.appendChild(generateSquare())
     }
 }
 
+// Main Block
 var boardContainer = generateContainer();
 generateBoard();
-
-// -------------------------------------------------
-/*
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-*/
