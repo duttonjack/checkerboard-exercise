@@ -10,8 +10,6 @@ function generateContainer(){
     return boardContainer
 }
 
-
-
 function generateSquare(color){
     var squareTile = document.createElement('div');
     squareTile.className = "square";
@@ -28,7 +26,6 @@ function generateRow(startingColor){
     } else {
       otherColor = 'red';
     }
-
     for (let i = 0; i < 8; i++){
         if (i % 2 === 0){
             boardContainer.appendChild(generateSquare(startingColor));
@@ -50,78 +47,3 @@ function generateBoard(){
 
 var boardContainer = generateContainer();
 generateBoard();
-
-// -------------------------------------------------
-/*
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-boardContainer.appendChild(generateSquare('black'));
-boardContainer.appendChild(generateSquare('red'));
-*/
